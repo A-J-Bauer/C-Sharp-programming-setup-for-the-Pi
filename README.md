@@ -30,7 +30,7 @@ Software you need for Windows 10 (free):
 <ol>
     <li>Get Visual Studio: Search the internet for "Visual Studio Community", download it from microsoft.com and install it.</li>
     <li>Get Raspberry Pi Imager: Search the internet for "Raspberry Pi Imager", download it from raspberrypi.org and install it.</li>
-    <li>Get WSL(Windows Subsystem for Linux): Launch the Microsoft Store on your pc and search for "WSL", pick the Debian distro and install it. You will be asked to set a user name and a password (simply use the same user name and password you intend to use on the pi).</li>
+    <li>Get WSL(Windows Subsystem for Linux): First enable Windows Subsystem for Linux in Control Panel / Programs and Features / Turn Windows Features on or off. Restart and launch the Microsoft Store. Search for "WSL", pick the Debian distro and install it.  You will be asked to set a user name and a password (simply use the same user name and password you intend to use on the pi).</li>
     <li>Write Raspberry PI OS with Desktop to the micro SD card. Use the Raspberry Pi Imager, choose Raspberry PI OS with Desktop, choose the SD card and write.</li>
     <li>Connect a monitor, keyboard and mouse to the Pi and boot it with the freshly installed OS from the micro SD. Do the setup including Wifi if not using a cable and installing updates. This takes some time.</li>
     <li>On the Windows 10 pc start Debian (WSL) and type <code>sudo apt-get update</code> and <code>sudo apt-get upgrade</code></li>
