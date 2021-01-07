@@ -28,25 +28,24 @@ Software you need for Windows 10 (free):
 ## Ready, Set, Go:
 
 <ol>
-    <li>Get Visual Studio: Search the internet for "Visual Studio Community", download it from microsoft.com and install it.</li>
-    <li>Get Raspberry Pi Imager: Search the internet for "Raspberry Pi Imager", download it from raspberrypi.org and install it.</li>
-    <li>Get WSL(Windows Subsystem for Linux): First enable Windows Subsystem for Linux in Control Panel / Programs and Features / Turn Windows Features on or off. Restart and launch the Microsoft Store. Search for "WSL", pick the Debian distro and install it.  You will be asked to set a user name and a password (simply use the same user name and password you intend to use on the pi).</li>
-    <li>Write Raspberry PI OS with Desktop to the micro SD card. Use the Raspberry Pi Imager, choose Raspberry PI OS with Desktop, choose the SD card and write.</li>
-    <li>Connect a monitor, keyboard and mouse to the Pi and boot it with the freshly installed OS from the micro SD. Do the setup including Wifi if not using a cable and installing updates. This takes some time.</li>
-    <li>On the Windows 10 pc start Debian (WSL) and type <code>sudo apt-get update</code> and <code>sudo apt-get upgrade</code></li>
-    <li>After installing updates on the Pi is done and the Pi has restarted, open Preferences/Raspberry Pi Configuration, on the localisation tab - set your keyboard.</li>
-    <li>Install XRDP so you can connect to the Pi using Remote Desktop Connection on the Windows 10 pc. To do this open a terminal (black icon on the taskbar) and type <code>sudo apt-get install xrdp</code>
-    <li>Open Preferences/Raspberry Pi Configuration again, click 'Change Password' and set the password again.</li>
-    <li>On the Windows 10 pc, open Remote Desktop Connection, type the Raspberry Pi hostname (default: raspberrypi), expand the dialog, fill the the 'User name' field, tick 'Allow me to save credentials' and click 'Connect'. You should now see the desktop of the Raspberry Pi. Notice the 'thinclient_drives' on the desktop, this can be very helpful if you want to transfer files between the Pi and your Windows 10 pc. You can set the folders you want to share in the Remote Desktop Connection dialog on the 'Local Resources' tab under 'More..'.</li>
-    <li>Open Preferences/Raspberry Pi Configuration again. On the 'Interfaces' tab select 'SSH'.</li>
-    <li>On the Windows 10 pc in the Debian WSL type <code>sudo apt-get install ssh</code></li>
-    <li>Type <code>sudo apt-get install rsync openssh-client</code></li>
-    <li>Create private and public keys in WSL with: <code>ssh-keygen</code>(simply hit enter 3 times)
-    <li>Copy the generated keys to the remote host (the raspberry Pi) with: <code>ssh-copy-id -i ~/.ssh/id_rsa.pub raspberrypi</code>
-    <li>Connect with:<code>ssh raspberrypi</code>
-    <li>Create a folder for the C# program: <code>mkdir /home/pi/helloworld</code>
-    <li>Change access permissions for this folder <code>sudo chmod 777 /home/pi/helloworld</code>
-    <li>Start Visual Studio and create a Console App (.NET Core) called "helloworld"
+    <li>[Win10 Pc] Get Visual Studio: Search the internet for "Visual Studio Community", download it from microsoft.com and install it.</li>
+    <li>[Win10 Pc] Get Raspberry Pi Imager: Search the internet for "Raspberry Pi Imager", download it from raspberrypi.org and install it.</li>
+    <li>[Win10 Pc] Get WSL(Windows Subsystem for Linux): First enable Windows Subsystem for Linux in Control Panel / Programs and Features / Turn Windows Features on or off. Restart and launch the Microsoft Store. Search for "WSL", pick the Debian distro and install it.  You will be asked to set a user name and a password (simply use the same user name and password you intend to use on the pi).</li>
+    <li>[Win10 Pc] Write Raspberry PI OS with Desktop to the micro SD card. Use the Raspberry Pi Imager, choose Raspberry PI OS with Desktop, choose the SD card and write.</li>
+    <li>[Raspi] Connect a monitor, keyboard and mouse to the Pi and boot it with the freshly installed OS from the micro SD. Do the setup including Wifi if not using a cable and installing updates. This takes some time.</li>
+    <li>[Win10 Pc] Start Debian (WSL) and type <code>sudo apt-get update</code> and <code>sudo apt-get upgrade</code></li>
+    <li>[Raspi] After installing updates on the Pi is done and the Pi has restarted, open Preferences/Raspberry Pi Configuration, on the localisation tab - set your keyboard.</li>
+    <li>[Raspi] Install XRDP so you can connect to the Pi using Remote Desktop Connection on the Windows 10 pc. To do this open a terminal (black icon on the taskbar) and type <code>sudo apt-get install xrdp</code>
+    <li>[Raspi] Open Preferences/Raspberry Pi Configuration again, click 'Change Password' and set the password again.</li>
+    <li>[Win10 Pc] Open Remote Desktop Connection, type the Raspberry Pi hostname (default: raspberrypi), expand the dialog, fill the the 'User name' field, tick 'Allow me to save credentials' and click 'Connect'. You should now see the desktop of the Raspberry Pi. Notice the 'thinclient_drives' on the desktop, this can be very helpful if you want to transfer files between the Pi and your Windows 10 pc. You can set the folders you want to share in the Remote Desktop Connection dialog on the 'Local Resources' tab under 'More..'.</li>
+    <li>[Raspi] Open Preferences/Raspberry Pi Configuration again. On the 'Interfaces' tab select 'SSH'.</li>    
+    <li>[Win10 Pc] In WSL, type <code>sudo apt-get install rsync openssh-client</code></li>
+    <li>[Win10 Pc] In WSL, create private and public keys in WSL with: <code>ssh-keygen</code>(simply hit enter 3 times)
+    <li>[Win10 Pc] In WSL, copy the generated keys to the remote host (the raspberry Pi) with: <code>ssh-copy-id -i ~/.ssh/id_rsa.pub raspberrypi</code>
+    <li>[Win10 Pc] In WSL, connect with:<code>ssh raspberrypi</code>
+    <li>[Win10 Pc] In WSL/SSH on the Pi, create a folder for the C# program: <code>mkdir /home/pi/helloworld</code>
+    <li>[Win10 Pc] In WSL/SSH on the Pi, Change access permissions for this folder <code>sudo chmod 777 /home/pi/helloworld</code>
+    <li>[Win10 Pc] Start Visual Studio and create a Console App (.NET Core) called "helloworld"
     <li>
         In the Solution Explorer, right click on the project 'helloworld' select 'Add/New Item', set "publish_rsync.bat" as name, click 'Add'
         <br><br><img src="https://raw.githubusercontent.com/A-J-Bauer/C-Sharp-programming-setup-for-the-Pi/main/img/additem.png"><br><br>
